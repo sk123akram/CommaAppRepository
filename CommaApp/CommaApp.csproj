@@ -183,6 +183,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\MasterDataController.cs" />
+    <Compile Include="Areas\Admin\Models\CityModel.cs" />
+    <Compile Include="Areas\Admin\Models\LogonModel.cs" />
+    <Compile Include="Areas\Admin\Models\StateModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -249,6 +254,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Web.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -306,9 +312,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommaApp.BLL\CommaApp.BLL.csproj">
+      <Project>{bfc7ce11-1fff-4475-8286-a27fc2e8aa9b}</Project>
+      <Name>CommaApp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommaApp.Commonutility\CommaApp.Commonutility.csproj">
+      <Project>{eff2cf70-a471-4b98-8390-5a8a494f0ee4}</Project>
+      <Name>CommaApp.Commonutility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommaApp.DAL\CommaApp.DAL.csproj">
+      <Project>{6b019961-3eed-4f5a-adba-78853050d0e8}</Project>
+      <Name>CommaApp.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
