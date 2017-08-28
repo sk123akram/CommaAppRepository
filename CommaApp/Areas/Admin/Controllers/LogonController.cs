@@ -46,7 +46,7 @@ namespace CommaApp.Areas.Admin.Controllers
                         {
                             return Redirect(logonmodel.Returnurl);
                         }
-                        return RedirectToAction("Index", "MasterData");
+                        return RedirectToAction("Dashboard", "MasterData");
                     }
                 }
                 Session["Error"] = "Invalid User name or Password.";

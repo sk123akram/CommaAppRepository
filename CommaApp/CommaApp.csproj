@@ -199,6 +199,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\MasterData\index.html" />
     <Content Include="Content\AdminStyles\css\custom\custom.min.css" />
     <Content Include="Content\AdminStyles\css\layouts\page-center.css" />
     <Content Include="Content\AdminStyles\css\layouts\style-fullscreen.css" />
@@ -337,6 +338,8 @@
     <Content Include="Content\AdminStyles\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Logon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\Country.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

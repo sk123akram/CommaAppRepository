@@ -17,6 +17,11 @@ namespace CommaApp.Areas.Admin.Controllers
 
         CommaAppEntities objdb = new CommaAppEntities();
 
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
         #region Country
         public ActionResult Country(int pid = 0, int cid = 0)
         {
