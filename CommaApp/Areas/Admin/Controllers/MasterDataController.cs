@@ -9,6 +9,7 @@ using CommaApp.BLL;
 using System.Net.Mail;
 using System.Net;
 using System.Collections.Specialized;
+using CommaApp.Filters;
 
 namespace CommaApp.Areas.Admin.Controllers
 {
@@ -31,7 +32,7 @@ namespace CommaApp.Areas.Admin.Controllers
             model.PageID = pid;
             model.Current = pid + 1;
             IEnumerable<CountryModel> Countries = new List<CountryModel>();
-            //CustomMethods.ValidateRoles("Country");
+            CustomMethods.ValidateRoles("Country");
             var countries = new CountryBLL { }.GetAllCountries(skip, take);
             if (cid != 0)
             {
@@ -67,8 +68,8 @@ namespace CommaApp.Areas.Admin.Controllers
 
         public ActionResult AddEditCountry(int id = 0, int pid = 0)
         {
-            //CustomMethods.ValidateRoles("Country");
-            if (!Convert.ToBoolean(Session["Add"]) && !Convert.ToBoolean(Session["Edit"]))
+            CustomMethods.ValidateRoles("Country");
+            if (!Convert.ToBoolean(Session["IsDelete"]) && !Convert.ToBoolean(Session["IsWrite"]))
                 return View("ErrorPage", "Error");
             CountryModel CountryModel = new CountryModel();
             int take = 10;
@@ -98,12 +99,12 @@ namespace CommaApp.Areas.Admin.Controllers
 
             if (model.CountryId == 0)
             {
-                if (!Convert.ToBoolean(Session["Add"]))
+                if (!Convert.ToBoolean(Session["IsWrite"]))
                     return View("ErrorPage");
             }
             else
             {
-                if (!Convert.ToBoolean(Session["Edit"]))
+                if (!Convert.ToBoolean(Session["IsWrite"]))
                     return View("ErrorPage");
             }
 
@@ -166,7 +167,7 @@ namespace CommaApp.Areas.Admin.Controllers
 
         public ActionResult ViewCountry(int id = 0, int pid = 0)
         {
-           // CustomMethods.ValidateRoles("Country");
+            CustomMethods.ValidateRoles("Country");
             if (!Convert.ToBoolean(Session["Add"]) && !Convert.ToBoolean(Session["Edit"]))
                 return View("ErrorPage", "Error");
             CountryModel country = new CountryModel();
@@ -260,8 +261,8 @@ namespace CommaApp.Areas.Admin.Controllers
         public ActionResult AddEditState(int id = 0, int pid = 0)
         {
             //CustomMethods.ValidateRoles("State");
-            if (!Convert.ToBoolean(Session["Add"]) && !Convert.ToBoolean(Session["Edit"]))
-                return View("ErrorPage", "Error");
+            //if (!Convert.ToBoolean(Session["Add"]) && !Convert.ToBoolean(Session["Edit"]))
+            //    return View("ErrorPage", "Error");
             StateModel StateModel = new StateModel();
             int take = 10;
             int skip = take * pid;
@@ -279,7 +280,7 @@ namespace CommaApp.Areas.Admin.Controllers
                     StateModel.IsActive = Convert.ToBoolean(objstate.IsActive);
                 }
             }
-            //CustomMethods.BindCountryList(StateModel);
+            CustomMethods.BindCountryList(StateModel);
             return View(StateModel);
         }
 
@@ -576,5 +577,7 @@ namespace CommaApp.Areas.Admin.Controllers
             return Json(Result);
         }
         #endregion
+
+
     }
 }

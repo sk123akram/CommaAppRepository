@@ -1,9 +1,9 @@
-﻿@model CommaApp.CommonUtility.CountryModel
+﻿@model CommaApp.CommonUtility.UserTypeModel
+
 @{
-    ViewBag.Title = "Country";
+    ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
 <!-- START CONTENT -->
 <section id="content">
 
@@ -46,7 +46,7 @@
 
                     <div class="col s12 m8 l9">
                         @*<a class="waves-effect waves-light  btn">Add New Country</a>*@
-                        @Html.ActionLink("Create New Country", "AddEditCountry", "MasterData", new { @class = "waves-effect waves-light  btn" })
+                        @Html.ActionLink("Create New Role", "Create", "Role", new { @class = "waves-effect waves-light  btn" })
                         <table class="striped">
                             <thead>
                                 <tr>
@@ -55,28 +55,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.CountryList)
+                                @foreach (var item in Model.UserTypeList)
                                 { 
                                     <tr>
-                                        <td>@item.CountryName</td>
+                                        <td>@item.UserTypeName</td>
                                         @* @if (Convert.ToBoolean(Session["Edit"]) || Convert.ToBoolean(Session["Delete"]) || Convert.ToBoolean(Session["View"]))
                                         {
                                             *@<td class="options-width">
                                                 @*@if (Convert.ToBoolean(Session["Edit"]))
                                                 {
-                                                    *@<a href="@Url.Action("AddEditCountry", "MasterData", new { @id = item.CountryId, @pid = Model.PageID })" title="Edit" class="icon-1 info-tooltip">Edit</a> ||
+                                                    *@<a href="@Url.Action("Edit", "Role", new { @id = item.UserTypeId, @pid = Model.PageID })" title="Edit" class="icon-1 info-tooltip">Edit</a> ||
                                                 @*}
                                                 @if (Convert.ToBoolean(Session["View"]))
                                                 {
-                                                    *@<a href="@Url.Action("ViewCountry", "MasterData", new { @id = item.CountryId, @pid = Model.PageID })" title="View" class="view-icon">Details</a>||
+                                                    *@<a href="@Url.Action("ViewUserType", "Role", new { @id = item.UserTypeId, @pid = Model.PageID })" title="View" class="view-icon">Details</a>||
                                                 @* }
                                                 @if (Convert.ToBoolean(Session["Delete"]) == true)
                                                 {
                                                     if (item.IsActive == true)
                                                     {
                                                     *@@*<a href="#" title="Status"  data-uid="@item.CountryId" class="icon-5"></a>*@
-                                                    <input type="checkbox" id="test6" checked="checked" />
-                                                    <label for="test6">Active</label>
+                                                <input type="checkbox" id="test6" checked="checked" />
+                                                <label for="test6">Active</label>
                                                 @*}
                                                     else if (item.IsActive == false)
                                                     {*@
@@ -99,3 +99,4 @@
     <!--end container-->
 </section>
 <!-- END CONTENT -->
+

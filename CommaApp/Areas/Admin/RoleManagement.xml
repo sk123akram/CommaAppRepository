@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+
+  <Page Id="2" Name="Role"></Page>
+  <Page Id="3" Name="Country" ></Page>
+  <Page Id="4" Name="State" ></Page>
+  <Page Id="5" Name="City" ></Page>
+  <Page Id="6" Name="CMS" ></Page>
+  <Page Id="8" Name="RoleAssignment"></Page>
+  <Page Id="9" Name="Module" ></Page>
+  <Page Id="12" Name="EmailTemplate" ></Page>
+  <Page Id="13" Name="PaymentType" ></Page>
+  <Page Id="15" Name="EmailSetting" ></Page>
+  <Page Id="16" Name="SmsTemplate" ></Page>
+  <Page Id="17" Name="SocialNetworkSettings"></Page>
+  <Page Id="18" Name="Vendor" ></Page>
+  <Page Id="19" Name="VehicleType" ></Page>
+  <Page Id="20" Name="ServiceType" ></Page>
+  <Page Id="21" Name="Vehcile" ></Page>
+  <page Id="22" Name="FareChartSettings"></page>
+  <page Id="23" Name="Customer"></page>
+  <Page Id="24" Name="AirPort"></Page>
+  <Page Id="25" Name="Location" ></Page>
+  <Page Id="26" Name="Package"></Page>
+  <Page Id="27" Name="OutStation"></Page>
+  <Page Id="29" Name="Banner"></Page>
+  <Page Id="28" Name="Driver"></Page>
+  <Page Id="30" Name="VendorDeposit"></Page>
+  <Page Id="31" Name="BookingStatus"></Page>
+  <Page Id="33" Name="VehicleDriver" ></Page>
+  <Page Id="34" Name="BookingDetails"></Page>
+  <Page Id="32" Name="Commission Settings"></Page>
+  
+
+
+
+
+
+
+  <!--<Page Id="5" Name="Category"></Page>
+  <Page Id="31" Name="Currency"></Page>
+  <Page Id="32" Name="Role"></Page>
+  <Page Id="34" Name="NotificationType"></Page>
+  <Page Id="35" Name="AdvertisementType"></Page>
+  <Page Id="36" Name="OfferType"></Page>
+  <Page Id="37" Name="NewsLetter"></Page>
+  <Page Id="38" Name="EmailTemplate"></Page>
+  <Page Id="39" Name="OrderStatus"></Page>
+  <Page Id="40" Name="PaymentMethod"></Page>
+  <Page Id="41" Name="OrderUnitType"></Page>
+  <Page Id="42" Name="SiteUserType"></Page>
+  <Page Id="43" Name="BadWord"></Page>
+  <Page Id="44" Name="Brand"></Page>
+  <Page Id="45" Name="RoleAssignment"></Page>
+  <Page Id="46" Name="Module"></Page>
+  <Page Id="47" Name="SiteUser"></Page>
+  <Page Id="48" Name="Product"></Page>
+  <Page Id="49" Name="Administrator"></Page>-->
+
+</Pages>

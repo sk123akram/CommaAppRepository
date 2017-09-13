@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CommaApp.CommonUtility
 {
-  public  class StateModel
+    public class StateModel
     {
         public int StateId { get; set; }
         public int? CountryId { get; set; }
@@ -23,8 +23,8 @@ namespace CommaApp.CommonUtility
         public int Pagecount { get; set; }
         public int PageID { get; set; }
         public int Current { get; set; }
-       // public IEnumerable<SelectListItem> CountryNames { get; set; }
+        public IEnumerable<SelectListItem> CountryNames { get; set; }
         public List<StateModel> StateList { get; set; }
-        //public IEnumerable<SelectListItem> CountryList { get; set; }
+        public IEnumerable<SelectListItem> CountryList { get; set; }
     }
 }

@@ -186,11 +186,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\LogonController.cs" />
     <Compile Include="Areas\Admin\Controllers\MasterDataController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Models\CityModel.cs" />
     <Compile Include="Areas\Admin\Models\LogonModel.cs" />
     <Compile Include="Areas\Admin\Models\StateModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\CustomMethods.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +201,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\RoleManagement.xml" />
     <Content Include="Areas\Admin\Views\MasterData\index.html" />
     <Content Include="Content\AdminStyles\css\custom\custom.min.css" />
     <Content Include="Content\AdminStyles\css\layouts\page-center.css" />
@@ -316,6 +319,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Logon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\Country.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\State.cshtml" />
     <Content Include="Content\AdminStyles\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\AdminStyles\font\material-design-icons\Material-Design-Icons.ttf" />
     <Content Include="Content\AdminStyles\font\material-design-icons\Material-Design-Icons.woff" />
@@ -336,10 +344,16 @@
     <Content Include="Content\AdminStyles\font\roboto\Roboto-Thin.ttf" />
     <Content Include="Content\AdminStyles\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\AdminStyles\font\roboto\Roboto-Thin.woff2" />
-    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Logon\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\MasterData\Dashboard.cshtml" />
-    <Content Include="Areas\Admin\Views\MasterData\Country.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\AddEditCountry.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\ViewCountry.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\AddEditState.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\ViewState.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\City.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\AddEditCity.cshtml" />
+    <Content Include="Areas\Admin\Views\MasterData\ViewCity.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Edit.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
