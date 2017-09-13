@@ -14,6 +14,7 @@ namespace CommaApp.Areas.Admin.Controllers
         //
         // GET: /Admin/UserType/
         UserTypeBLL usertypeBLL = new UserTypeBLL();
+        
         //
         // GET: /Admin/Role/
 
