@@ -34,13 +34,13 @@ namespace CommaApp.Areas.Admin.Controllers
 
                     UserBLL Userbll = new UserBLL();
                     UserModel adminModel = new UserModel { UserName = logonmodel.UserName, Password = DataEncryption.Encrypt(logonmodel.Password, "passKey") };
-                    UserModel objadministrator = Userbll.UserLogin(adminModel);
+                    UserModel objadministrator = Userbll.AdminLogin(adminModel);
 
                     if (adminModel != null)
                     {
-                        Session["UserId"] = objadministrator.UserId;
+                        Session["UserId"] = objadministrator.AdminId;
                         Session["UserName"] = objadministrator.UserName;
-                        Session["UserTypeId"] = objadministrator.UserTypeId;
+                        Session["RoleId"] = objadministrator.RoleId;
                         Session.Timeout = 120;
                         if (logonmodel.Returnurl != null)
                         {

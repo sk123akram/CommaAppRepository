@@ -9,10 +9,11 @@ namespace CommaApp.CommonUtility
     public class RoleAssignmentModel
     {
         public int UserTypeId { get; set; }
+        public int AdminId { get; set; }
         public int Id { get; set; }
         public int? RoleId { get; set; }
         public bool IsActive { get; set; }
-        public int? ModuleId { get; set; }
+        public int ModuleId { get; set; }
         public bool IsAdd { get; set; }
         public bool IsEdit { get; set; }
         public bool IsDelete { get; set; }
@@ -21,13 +22,15 @@ namespace CommaApp.CommonUtility
 
         public string UserTypeName { get; set; }
         public int RoleAssgnId { get; set; }
+        public string RoleName { get; set; }
         public string ModuleName { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         public IEnumerable<RoleAssignmentModel> RoleAssignment { get; set; }
-        public IEnumerable<UserTypeModel> RolesModel { get; set; }
+        public IEnumerable<UserTypeModel> UserTypeModel { get; set; }
+        public IEnumerable<RoleModal> RolesModel { get; set; }
         public List<RoleAssignmentModel> RoleAssgObj { get; set; }
         public List<RoleAssignmentModel> moduleDetails { get; set; }
         public List<UserTypeModel> roleModelObj { get; set; }

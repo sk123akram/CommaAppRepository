@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommaApp.CommonUtility
 {
-   public class LogonModel
+    public class LogonModel
     {
         public int UserId { get; set; }
         public int UserTypeId { get; set; }
@@ -18,6 +18,12 @@ namespace CommaApp.CommonUtility
         public DateTime UpdatedDate { get; set; }
         public bool IsActive { get; set; }
         public string Returnurl { get; set; }
+
+        public int RoleId { get; set; }
+        public int AdminId { get; set; }
+        public string GUID { get; set; }
+        public bool IsConfirmed { get; set; }
+
 
     }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76576cb051b249b6879d9ce7cd192155" Name="Diagram1">
+        <EntityTypeShape EntityType="CommaAppModel.City" Width="1.5" PointX="0.59753849012662585" PointY="19.624372849065985" />
+        <EntityTypeShape EntityType="CommaAppModel.Country" Width="1.5" PointX="9.3599681730195741" PointY="25.304190006714403" />
+        <EntityTypeShape EntityType="CommaAppModel.Currency" Width="1.5" PointX="6.7201793150604612" PointY="5.8619002131102143" />
+        <EntityTypeShape EntityType="CommaAppModel.Module" Width="1.5" PointX="4.3660127205615922" PointY="21.342290158077279" />
+        <EntityTypeShape EntityType="CommaAppModel.RoleAssignment" Width="1.5" PointX="4.2375617531303131" PointY="4.9525434844906178" />
+        <EntityTypeShape EntityType="CommaAppModel.Role" Width="1.5" PointX="9.78805929319377" PointY="9.1594230426286458" />
+        <EntityTypeShape EntityType="CommaAppModel.State" Width="1.5" PointX="4.15865360580322" PointY="27.519205627739058" />
+        <EntityTypeShape EntityType="CommaAppModel.User" Width="1.5" PointX="1.3754461488572165" PointY="7.5652328764857879" />
+        <EntityTypeShape EntityType="CommaAppModel.UserType" Width="1.5" PointX="4.6432300753161453" PointY="15.948045618807917" />
+        <AssociationConnector Association="CommaAppModel.FK_City_State" />
+        <AssociationConnector Association="CommaAppModel.FK_State_Country" />
+        <AssociationConnector Association="CommaAppModel.FK_RoleAssignment_Module" />
+        <AssociationConnector Association="CommaAppModel.FK_RoleAssignment_Roles" />
+        <AssociationConnector Association="CommaAppModel.FK_RoleAssignment_UserType" />
+        <AssociationConnector Association="CommaAppModel.FK_User_UserType" />
+        <EntityTypeShape EntityType="CommaAppModel.Administrator" Width="1.5" PointX="7.5" PointY="15" />
+        <AssociationConnector Association="CommaAppModel.FK_Administrator_Roles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

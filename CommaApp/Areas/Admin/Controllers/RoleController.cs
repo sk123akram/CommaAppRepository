@@ -6,15 +6,15 @@ using System.Web.Mvc;
 using CommaApp.BLL;
 using CommaApp.CommonUtility;
 using CommaApp.Filters;
+using CommaApp.DAL;
+using System.Xml.Linq;
 
 namespace CommaApp.Areas.Admin.Controllers
 {
     public class RoleController : Controller
     {
-        //
-        // GET: /Admin/UserType/
-        UserTypeBLL usertypeBLL = new UserTypeBLL();
-        
+        RolesBLL objRolesBLL = new RolesBLL();
+
         //
         // GET: /Admin/Role/
 
@@ -24,20 +24,20 @@ namespace CommaApp.Areas.Admin.Controllers
             {
                 int take = 10;
                 int skip = take * pid;
-                UserTypeModel UsertypeModel = new UserTypeModel();
-                UsertypeModel.PageID = pid;
-                UsertypeModel.Current = pid + 1;
+                RoleModal objRoleModal = new RoleModal();
+                objRoleModal.PageID = pid;
+                objRoleModal.Current = pid + 1;
 
-                var rolelist = new UserTypeBLL { }.GetAllUserTypes(skip, take);
+                var rolelist = new RolesBLL { }.GetAllRoles(skip, take);
                 if (rolelist != null)
                 {
-                    double count = Convert.ToDouble(new UserTypeBLL { }.GetPageCount());
+                    double count = Convert.ToDouble(new RolesBLL { }.GetPageCount());
                     var res = count / take;
-                    UsertypeModel.Pagecount = (int)Math.Ceiling(res);
-                    UsertypeModel.UserTypeList = rolelist;
+                    objRoleModal.Pagecount = (int)Math.Ceiling(res);
+                    objRoleModal.Roleslist = rolelist;
                 }
                 CustomMethods.ValidateRoles("Role");
-                return View(UsertypeModel);
+                return View(objRoleModal);
             }
             catch (Exception e)
             {
@@ -47,19 +47,19 @@ namespace CommaApp.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            UserTypeModel model = new UserTypeModel();
+            RoleModal model = new RoleModal();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(UserTypeModel model, FormCollection Pages)
+        public ActionResult Create(RoleModal model, FormCollection Pages)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    model.CreatedBy = Convert.ToInt32(Session["UserId"]);
-                    int res = new UserTypeBLL { }.AddEditUserType(model);
+                    //model.CreatedBy = Convert.ToInt32(Session["UserId"]);
+                    int res = new RolesBLL { }.AddEditRole(model);
                     if (res != 0)
                     {
                         Session["Success"] = "Successfully Added The Record";
@@ -81,7 +81,7 @@ namespace CommaApp.Areas.Admin.Controllers
         {
             try
             {
-                UserTypeModel model = usertypeBLL.GetUserTypeById(id);
+                RoleModal model = objRolesBLL.GetRoleById(id);
                 int take = 10;
                 int skip = take * pid;
                 model.PageID = pid;
@@ -92,7 +92,7 @@ namespace CommaApp.Areas.Admin.Controllers
                     return View(model);
                 }
                 Session["Error"] = "Record does not exist";
-                return View(new UserTypeModel());
+                return View(new RoleModal());
             }
             catch (Exception e)
             {
@@ -100,14 +100,14 @@ namespace CommaApp.Areas.Admin.Controllers
             }
         }
 
-        public ActionResult Edit(UserTypeModel model, FormCollection Pages)
+        public ActionResult Edit(RoleModal model, FormCollection Pages)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    model.UpdatedBy = Convert.ToInt32(Session["UserId"]);
-                    int res = new UserTypeBLL { }.AddEditUserType(model);
+                    // model.UpdatedBy = Convert.ToInt32(Session["UserId"]);
+                    int res = new RolesBLL { }.AddEditRole(model);
                     if (res != 0)
                     {
                         Session["Success"] = "Successfully Updated";
@@ -127,7 +127,7 @@ namespace CommaApp.Areas.Admin.Controllers
         public JsonResult ChangeStatusUserType(int id)
         {
             bool Result = false;
-            bool changestatus = new UserTypeBLL { }.ChangeStatusUserType(id);
+            bool changestatus = new RolesBLL { }.ChangeStatus(id);
             if (changestatus)
             {
                 Result = true;
@@ -140,7 +140,7 @@ namespace CommaApp.Areas.Admin.Controllers
         {
             try
             {
-                UserTypeModel model = new UserTypeBLL { }.GetUserTypeById(id);
+                RoleModal model = new RolesBLL { }.GetRoleById(id);
                 int take = 10;
                 int skip = take * pid;
                 model.PageID = pid;

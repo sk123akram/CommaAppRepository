@@ -1,0 +1,102 @@
+﻿@model CommaApp.CommonUtility.ModulesModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- START CONTENT -->
+<section id="content">
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Blank Page</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+            <p class="caption">Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible. In addition, to improve mobile experience, all tables on mobile-screen widths are centered automatically.</p>
+            <div class="divider"></div>
+            <!--Striped Table-->
+            <div class="divider"></div>
+            <div id="striped-table">
+                <h4 class="header">Striped Table</h4>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p>Add <code class=" language-markup">class="striped"</code> to the table tag for a striped table</p>
+                    </div>
+
+                    <div class="col s12 m8 l9">
+                        @*<a class="waves-effect waves-light  btn">Add New Country</a>*@
+                        @Html.ActionLink("Create New Module", "Create", "Module", new { @class = "waves-effect waves-light  btn" })
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Module Name </th>
+                                    <th data-field="name">Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ModuleList)
+                                { 
+                                    <tr>
+                                        <td>@item.ModuleName</td>
+                                        @* @if (Convert.ToBoolean(Session["Edit"]) || Convert.ToBoolean(Session["Delete"]) || Convert.ToBoolean(Session["View"]))
+                                        {
+                                            *@<td class="options-width">
+                                                @*@if (Convert.ToBoolean(Session["Edit"]))
+                                                {
+                                                    *@<a href="@Url.Action("Edit", "Module", new { @id = item.ModuleId, @pid = Model.PageID })" title="Edit" class="icon-1 info-tooltip">Edit</a> ||
+                                                @*}
+                                                @if (Convert.ToBoolean(Session["View"]))
+                                                {
+                                                    *@<a href="@Url.Action("Details", "Module", new { @id = item.ModuleId, @pid = Model.PageID })" title="View" class="view-icon">Details</a>||
+                                                @* }
+                                                @if (Convert.ToBoolean(Session["Delete"]) == true)
+                                                {
+                                                    if (item.IsActive == true)
+                                                    {
+                                                    *@@*<a href="#" title="Status"  data-uid="@item.CountryId" class="icon-5"></a>*@
+                                                <input type="checkbox" id="test6" checked="checked" />
+                                                <label for="test6">Active</label>
+                                                @*}
+                                                    else if (item.IsActive == false)
+                                                    {*@
+                                                @*<a href="#" title="Status"  data-uid="@item.CountryId" class="inactive"></a>*@
+
+                                                @*}
+                                                }*@
+
+                                            </td>
+                                        @*}*@
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+</section>
+<!-- END CONTENT -->

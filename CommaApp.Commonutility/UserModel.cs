@@ -32,6 +32,11 @@ namespace CommaApp.CommonUtility
         public List<UserModel> AdminList { get; set; }
         public string lblmessage { get; set; }
 
+        public int? RoleId { get; set; }
+        public int AdminId { get; set; }
+        public string GUID { get; set; }
+        public bool IsConfirmed { get; set; }
+
 
 
     }

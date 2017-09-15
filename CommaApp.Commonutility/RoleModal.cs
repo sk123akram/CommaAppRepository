@@ -19,8 +19,16 @@ namespace CommaApp.CommonUtility
         public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+        public int PageID { get; set; }
+        public int Current { get; set; }
+        public int Pagecount { get; set; }
+        public List<RoleModal> Roleslist { get; set; }
 
         public List<RolemanagementModel> Rolemanages { get; set; }
+
+        public List<RoleAssignmentModel> RoleAssignments { get; set; }
+        public List<ModulesModel> ModulesList { get; set; }
+        public List<UserTypeModel> UserTypeList { get; set; }
     }
 
     public class RolemanagementModel

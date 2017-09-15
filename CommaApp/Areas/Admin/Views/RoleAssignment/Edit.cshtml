@@ -1,0 +1,127 @@
+﻿@model CommaApp.CommonUtility.RoleAssignmentModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- START CONTENT -->
+<section id="content">
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Blank Page</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+            <p class="caption">Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible. In addition, to improve mobile experience, all tables on mobile-screen widths are centered automatically.</p>
+            <div class="divider"></div>
+            <!--Striped Table-->
+            <div class="divider"></div>
+            <div id="striped-table">
+                <h4 class="header">Striped Table</h4>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p>Add <code class=" language-markup">class="striped"</code> to the table tag for a striped table</p>
+                    </div>
+
+                    <div class="col s12 m8 l9">
+                        @*<a class="waves-effect waves-light  btn">Add New Country</a>*@
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Role Name </th>
+                                    <th data-field="name">Add</th>
+                                    <th data-field="name">Edit</th>
+                                    <th data-field="name">Status</th>
+                                    <th data-field="name">View</th>
+                                    <th data-field="name">IsEnable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @using (Html.BeginForm("Update", "RoleAssignment"))
+                                {
+                                    @Html.HiddenFor(x => x.UserTypeId)
+                                    <tr>
+
+                                        @foreach (var data in Model.ModuleList)
+                                        {
+                        
+                                            <tr>
+                                                <td><a href="#" title='@data.ModuleName'>@data.ModuleName </a></td>
+
+                                                <td>
+
+                                                    <input type="checkbox" class="filled-in" name="addOptions" value='@data.ModuleId' @if (data.IsAdd == true)
+                                                                                                                                      {<text>checked="checked"</text>}/>
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="filled-in" name="editOptions" value='@data.ModuleId' @if (data.IsEdit == true)
+                                                                                                                                       {<text>checked="checked"</text>}/></td>
+                                                <td>
+                                                    <input type="checkbox" class="filled-in" name="delOptions"  value='@data.ModuleId' @if (data.IsDelete == true)
+                                                                                                                                       {<text>checked="checked"</text>}/></td>
+                                                <td>
+                                                    <input type="checkbox" class="filled-in" name="viewOptions" value='@data.ModuleId' @if (data.IsView == true)
+                                                                                                                                       {<text>checked="checked"</text>}/></td>
+                                                <td>
+                                                    <input type="checkbox" class="filled-in" name="viewOptions" value='@data.ModuleId' @if (data.IsEnable == true)
+                                                                                                                                       {<text>checked="checked"</text>}/></td>
+                                                <td>
+                                                    <input type="checkbox" class="filled-in" name="statusOptions" value='@data.ModuleId' @if (data.IsActive == true)
+                                                                                                                                         {<text>checked="checked"</text>}/></td>
+                                                <td style="display: none;">
+                                                    <input type="checkbox" class="filled-in" name="AllModuleId"  value='@data.ModuleId'checked="checked" /></td>
+
+                                            </tr> 
+                
+                                        }
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+</section>
+<!-- END CONTENT -->
+
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="~/Scripts/js/plugins/jquery-1.11.2.min.js"></script>
+<!--materialize js-->
+<script type="text/javascript" src="~/Scripts/js/materialize.min.js"></script>
+<!--prism-->
+<script type="text/javascript" src="~/Scripts/js/plugins/prism/prism.js"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="~/Scripts/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<!-- chartist -->
+<script type="text/javascript" src="~/Scripts/js/plugins/chartist-js/chartist.min.js"></script>
+
+<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+<script type="text/javascript" src="~/Scripts/js/plugins.min.js"></script>
+<!--custom-script.js - Add your own theme custom JS-->
+<script type="text/javascript" src="~/Scripts/js/custom-script.js"></script>

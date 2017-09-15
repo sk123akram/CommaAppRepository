@@ -311,8 +311,8 @@ namespace CommaApp.Filters
         {
             try
             {
-                int roleid = Convert.ToInt32(HttpContext.Current.Session["UserTypeId"]);
-                var rm = new UserTypeBLL { }.GetUserTypeManagement(pageid, roleid);
+                int roleid = Convert.ToInt32(HttpContext.Current.Session["UserId"]);
+                var rm = new RolesBLL { }.GetRoleManagement(pageid, roleid);
                 if (rm != null)
                 {
                     HttpContext.Current.Session["IsAdd"] = rm.IsAdd;

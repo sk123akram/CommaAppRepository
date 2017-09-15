@@ -1,0 +1,74 @@
+﻿@model CommaApp.CommonUtility.RoleModal
+
+@{
+    ViewBag.Title = "ViewUserType";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- START CONTENT -->
+<section id="content">
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Blank Page</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--start container-->
+    <div class="container">
+        <!--Form Advance-->
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">View Role</h4>
+                    <div class="row">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        @Html.LabelFor(model => model.RoleName)
+                                        @Html.DisplayFor(x => x.RoleName)
+
+                                        @Html.LabelFor(model => model.IsActive)
+                                        @Html.DisplayFor(x => x.IsActive)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <a href="@Url.Action("Index", "Role")">Cancel</a>
+                                           @* <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                Cancel
+                                                        <i class="mdi-content-send right"></i>
+                                            </button>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+</section>
+<!-- END CONTENT -->

@@ -1,0 +1,111 @@
+﻿@model CommaApp.CommonUtility.StateModel
+
+@{
+    ViewBag.Title = "AddEditCountry";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- START CONTENT -->
+<section id="content">
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Blank Page</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--start container-->
+    <div class="container">
+        <!--Form Advance-->
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Add/Edit State</h4>
+                    <div class="row">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+
+                            if (Model.StateId != 0)
+                            {
+                            @Html.HiddenFor(x => x.StateId)
+                            }
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        @*<input id="first_name" type="text">
+                                        <label for="first_name">Country Name</label>*@
+                                        @Html.DropDownListFor(x => x.CountryId, Model.CountryList, "Select", new { @class = "form-control", @required = "required" })
+
+                                        @*<select>
+                                            <option value="" disabled selected>Choose your country</option>
+                                            <option value="1">Manager</option>
+                                            <option value="2">Developer</option>
+                                            <option value="3">Business</option>
+                                        </select>*@
+                                        <label>Select Country</label>
+                                        @* @Html.TextBoxFor(model => model.StateName, new { @id = "country_name", @required = "required", @class = "form-control" })
+                                        @Html.LabelFor(model => model.StateName)*@
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        @Html.TextBoxFor(model => model.StateName, new { @id = "State_name", @required = "required", @class = "form-control" })
+                                        @Html.LabelFor(model => model.StateName)
+                                        @* <input id="email5" type="email">
+                                        <label for="email">Country Code</label>*@
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">
+                                                Submit
+                                                        <i class="mdi-content-send right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+</section>
+<!-- END CONTENT -->
+
+<!-- jQuery Library -->
+<script type="text/javascript" src="~/Scripts/js/plugins/jquery-1.11.2.min.js"></script>
+<!--materialize js-->
+<script type="text/javascript" src="~/Scripts/js/materialize.min.js"></script>
+<!--prism-->
+<script type="text/javascript" src="~/Scripts/js/plugins/prism/prism.js"></script>
+<!--scrollbar-->
+<script type="text/javascript" src="~/Scripts/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<!-- chartist -->
+<script type="text/javascript" src="~/Scripts/js/plugins/chartist-js/chartist.min.js"></script>
+
+<!--plugins.js - Some Specific JS codes for Plugin Settings-->
+<script type="text/javascript" src="~/Scripts/js/plugins.min.js"></script>
+<!--custom-script.js - Add your own theme custom JS-->
+<script type="text/javascript" src="~/Scripts/js/custom-script.js"></script>
